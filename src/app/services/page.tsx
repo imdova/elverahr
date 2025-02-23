@@ -43,9 +43,9 @@ export default function AboutUsPage() {
         <div className="container mx-auto px-6 lg:max-w-[1170px] h-full">
           <div className="w-full bg-[#eee] rounded-md p-6">
             <h1 className="relative text-3xl lg:text-5xl font-bold mb-6 before:absolute before:-bottom-5 before:left-0 before:w-1/3 before:h-[2px] before:bg-primary  after:absolute after:-bottom-4 after:left-0 after:w-[50px] after:h-[2px] after:bg-primary">
-              About
+              Our
               <span className="text-primary text-3xl lg:text-5xl ml-2">
-                Company
+                Services
               </span>
             </h1>
             <span className="block text-2xl my-8">
