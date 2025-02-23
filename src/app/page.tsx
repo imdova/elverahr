@@ -13,6 +13,10 @@ import {
 } from "lucide-react";
 import Link from "next/link";
 import Button from "@/components/Buttons/Button";
+import ProjectsSlide from "@/components/ProjectsSlide";
+import ClientSlider from "@/components/ClientSlider";
+import { projects } from "@/constants/projects.data";
+import { Clients } from "@/constants/clients.data";
 
 export default function Home() {
   return (
@@ -293,6 +297,21 @@ export default function Home() {
               </ul>
             </div>
           </div>
+        </div>
+      </section>
+      <section className="py-16">
+        {/* Projects  */}
+        <div className="container mx-auto px-6 lg:max-w-[1170px]">
+          <ProjectsSlide projects={projects} />
+        </div>
+      </section>
+      {/* Client Testimonials  */}
+      <section className="py-16 bg-[#eee]">
+        <div className="container mx-auto px-6 lg:max-w-[1170px]">
+          <h1 className="text-3xl font-bold mb-8 text-center">
+            What Clients Say ?
+          </h1>
+          <ClientSlider clients={Clients} />
         </div>
       </section>
     </>

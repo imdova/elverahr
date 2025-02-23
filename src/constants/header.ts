@@ -5,7 +5,7 @@ export const commonLinks = [
   },
   {
     title: "Service",
-    url: "#",
+    url: "/services",
   },
   {
     title: "About us",

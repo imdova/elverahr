@@ -15,7 +15,7 @@ export default function Footer() {
           </div>
         </div>
         {/* Grid */}
-        <div className="relative grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-3 gap-y-8 md:gap-8 py-10 max-w-sm mx-auto sm:max-w-3xl lg:max-w-full">
+        <div className="relative grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 gap-y-8 md:gap-8 py-10 max-w-sm mx-auto sm:max-w-3xl lg:max-w-full">
           {/* Col 1 */}
           <div className="lg:mx-auto text-left">
             <h4 className="text-lg text-white font-bold  mb-7">Product</h4>
@@ -23,28 +23,28 @@ export default function Footer() {
               <li className="mb-6">
                 <Link
                   href="javascript:;"
-                  className="text-white hover:text-orange-primary">
+                  className="text-white hover:text-primary">
                   Digital MArkting
                 </Link>
               </li>
               <li className="mb-6">
                 <Link
                   href="javascript:;"
-                  className=" text-white hover:text-orange-primary">
+                  className=" text-white hover:text-primary">
                   Brand Design
                 </Link>
               </li>
               <li className="mb-6">
                 <Link
                   href="javascript:;"
-                  className=" text-white hover:text-orange-primary">
+                  className=" text-white hover:text-primary">
                   Social Media
                 </Link>
               </li>
               <li className="mb-6">
                 <Link
                   href="javascript:;"
-                  className=" text-white hover:text-orange-primary">
+                  className=" text-white hover:text-primary">
                   UI UX Design
                 </Link>
               </li>
@@ -57,21 +57,21 @@ export default function Footer() {
               <li className="mb-6">
                 <Link
                   href="javascript:;"
-                  className="text-white hover:text-orange-primary">
+                  className="text-white hover:text-primary">
                   Portfolio
                 </Link>
               </li>
               <li className="mb-6">
                 <Link
                   href="javascript:;"
-                  className=" text-white hover:text-orange-primary">
+                  className=" text-white hover:text-primary">
                   Blog
                 </Link>
               </li>
               <li className="mb-6">
                 <Link
                   href="javascript:;"
-                  className=" text-white hover:text-orange-primary">
+                  className=" text-white hover:text-primary">
                   Solution
                 </Link>
               </li>
@@ -84,28 +84,28 @@ export default function Footer() {
               <li className="mb-6">
                 <Link
                   href="javascript:;"
-                  className="text-white hover:text-orange-primary">
+                  className="text-white hover:text-primary">
                   About
                 </Link>
               </li>
               <li className="mb-6">
                 <Link
                   href="javascript:;"
-                  className=" text-white hover:text-orange-primary">
+                  className=" text-white hover:text-primary">
                   Bootcamp
                 </Link>
               </li>
               <li className="mb-6">
                 <Link
                   href="javascript:;"
-                  className=" text-white hover:text-orange-primary">
+                  className=" text-white hover:text-primary">
                   Contact
                 </Link>
               </li>
               <li className="mb-6">
                 <Link
                   href="javascript:;"
-                  className=" text-white hover:text-orange-primary">
+                  className=" text-white hover:text-primary">
                   Help
                 </Link>
               </li>

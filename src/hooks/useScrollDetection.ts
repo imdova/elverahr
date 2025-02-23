@@ -5,20 +5,14 @@ const useScrollDetection = (triggerHeight = 2) => {
   const [isScrolled, setIsScrolled] = useState(false);
 
   useEffect(() => {
-    if (typeof window !== "undefined") {
-      const handleScroll = () => {
-        if (window.scrollY >= triggerHeight) {
-          setIsScrolled(true);
-        } else {
-          setIsScrolled(false);
-        }
-      };
+    const checkScrollPosition = () => {
+      setIsScrolled(window.scrollY >= triggerHeight);
+    };
 
-      window.addEventListener("scroll", handleScroll);
-      return () => {
-        window.removeEventListener("scroll", handleScroll);
-      };
-    }
+    checkScrollPosition(); // Run immediately on mount
+    window.addEventListener("scroll", checkScrollPosition);
+
+    return () => window.removeEventListener("scroll", checkScrollPosition);
   }, [triggerHeight]);
 
   return isScrolled;
