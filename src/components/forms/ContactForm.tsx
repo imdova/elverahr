@@ -71,7 +71,7 @@ export default function ContactForm() {
   };
 
   return (
-    <div className="p-6">
+    <div>
       <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">
         <div className="flex gap-4">
           <div className="w-full">

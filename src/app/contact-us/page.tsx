@@ -55,7 +55,7 @@ export default function AboutUsPage() {
                 src={Contact_Img_2}
                 alt="Landing Img"
               />
-              <div className="absolute top-0 left-0 w-full h-full bg-[#00000050]"></div>
+              <div className="absolute top-0 left-0 w-full h-full bg-[#000000b2]"></div>
               <Image
                 className="absolute top-1/2 -translate-y-1/4 left-8 object-cover "
                 src={Contact_Img_3}
@@ -112,7 +112,7 @@ export default function AboutUsPage() {
               <span className="text-3xl text-primary font-semibold text-center">
                 Schedule a Free Consultation
               </span>
-              <div className="flex flex-col items-center pr-6">
+              <div className="flex flex-col items-center p-4">
                 <ul className="flex -space-x-3 mb-3">
                   <li className="w-12">
                     <Image
