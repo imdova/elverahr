@@ -250,7 +250,7 @@ export default function Home() {
               />
             </div>
             <div className="relative flex flex-col gap-4 justify-center w-full ">
-              <h2 className="text-5xl font-bold text-center mb-6">
+              <h2 className="text-3xl font-bold text-center mb-6">
                 Why Choose Us ?
               </h2>
               <ul className="flex flex-col gap-4">
@@ -268,7 +268,7 @@ export default function Home() {
                       <Check className="text-white" size={18} />
                     </div>
                   </div>
-                  <h2 className="text-xl">Expertise You Can Trust</h2>
+                  <h2 className="text-xl">Customized Solutions</h2>
                 </li>
                 <li className="flex items-center gap-4 p-3 w-full bg-white rounded-md">
                   <div className="w-10">
@@ -276,7 +276,7 @@ export default function Home() {
                       <Check className="text-white" size={18} />
                     </div>
                   </div>
-                  <h2 className="text-xl">Expertise You Can Trust</h2>
+                  <h2 className="text-xl">Partnership-Driven Approa</h2>
                 </li>
                 <li className="flex items-center gap-4 p-3 w-full bg-white rounded-md">
                   <div className="w-10">
@@ -284,7 +284,7 @@ export default function Home() {
                       <Check className="text-white" size={18} />
                     </div>
                   </div>
-                  <h2 className="text-xl">Expertise You Can Trust</h2>
+                  <h2 className="text-xl">Innovative Tools & Stra</h2>
                 </li>
                 <li className="flex items-center gap-4 p-3 w-full bg-white rounded-md">
                   <div className="w-10">
@@ -292,7 +292,7 @@ export default function Home() {
                       <Check className="text-white" size={18} />
                     </div>
                   </div>
-                  <h2 className="text-xl">Expertise You Can Trust</h2>
+                  <h2 className="text-xl">Digital Agency Database</h2>
                 </li>
               </ul>
             </div>

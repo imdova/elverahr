@@ -8,6 +8,7 @@ import Button from "@/components/Buttons/Button";
 import { ArrowRight } from "lucide-react";
 import TeamCard from "@/components/TeamCard";
 import { teamMembers } from "@/constants/team.data";
+import Link from "next/link";
 export default function AboutUsPage() {
   return (
     <>
@@ -32,9 +33,11 @@ export default function AboutUsPage() {
               </div>
 
               <ul className="flex gap-3">
-                <li className="text-xl lg:text-2xl font-semibold text-white">
+                <Link
+                  href={"/"}
+                  className="text-xl lg:text-2xl font-semibold text-white">
                   Home
-                </li>
+                </Link>
                 <li className="text-xl lg:text-2xl font-semibold text-white">
                   /
                 </li>
@@ -145,7 +148,7 @@ export default function AboutUsPage() {
               </p>
               <div className="flex flex-col lg:flex-row gap-4 mt-12">
                 <div className="w-full">
-                  <div className="flex items-center gap-3 p-4 bg-white rounded-md mb-4">
+                  <div className="flex flex-col md:flex-row gap-3 p-4 bg-white rounded-md mb-4">
                     <div className="w-16">
                       <div className="flex justify-center items-center w-16 h-16 bg-primary rounded-md">
                         <svg
@@ -170,7 +173,7 @@ export default function AboutUsPage() {
                       </p>
                     </div>
                   </div>
-                  <div className="flex  gap-3 p-4 bg-white rounded-md">
+                  <div className="flex flex-col md:flex-row gap-3 p-4 bg-white rounded-md">
                     <div className="w-16">
                       <div className="flex justify-center items-center w-16 h-16 bg-primary rounded-md">
                         <svg
@@ -188,7 +191,7 @@ export default function AboutUsPage() {
                         </svg>
                       </div>
                     </div>
-                    <div className="pl-6">
+                    <div className="md:pl-6">
                       <h2 className="text-lg font-semibold">Our Values</h2>
                       <ul className="flex flex-col gap-1 list-disc text-sm pl-4 pt-3">
                         <li>

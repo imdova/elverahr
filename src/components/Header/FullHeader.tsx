@@ -3,10 +3,11 @@ import Logo from "@/assets/icons/logo";
 import { commonLinks } from "@/constants/header";
 import useScrollDetection from "@/hooks/useScrollDetection";
 import { BaseHeaderProps } from "@/types";
+import { isCurrentPage } from "@/util";
 import { Search } from "lucide-react";
 import Link from "next/link";
 import { useState } from "react";
-const FullHeader: React.FC<BaseHeaderProps> = () => {
+const FullHeader: React.FC<BaseHeaderProps> = ({ pathname }) => {
   const isScrolled = useScrollDetection();
   const [isActive, setIsActive] = useState(false);
 
@@ -25,12 +26,14 @@ const FullHeader: React.FC<BaseHeaderProps> = () => {
           </div>
           <div className="hidden text-main items-center space-x-4 lg:space-x-8  md:flex text-white ">
             {commonLinks.map((link) => {
+              const isPage = isCurrentPage(pathname, link.url);
               return (
                 <Link
                   key={link.title}
                   href={link.url}
-                  className={`font-medium capitalize link-smooth border-b border-b-transparent pb-2 text-black hover:text-primary  
-                     `}>
+                  className={`font-medium capitalize link-smooth border-b border-b-transparent pb-2 text-black hover:text-primary ${
+                    isPage ? "text-primary" : ""
+                  } `}>
                   {link.title}
                 </Link>
               );
@@ -64,22 +67,25 @@ const FullHeader: React.FC<BaseHeaderProps> = () => {
                   } transition`}></span>
                 <span
                   className={`h-[2px] w-full rounded-full bg-black ${
-                    isActive ? "-rotate-45 -translate-y-[7px]" : ""
+                    isActive ? "-rotate-[40deg] -translate-y-[7px]" : ""
                   } `}></span>
               </div>
             </button>
           </div>
         </div>
         <div
-          className={`absolute top-full left-0  flex-col p-4 shadow-lg w-full overflow-hidden bg-white text-black  ${
+          className={`absolute top-full left-0  md:hidden flex-col p-4 shadow-lg w-full overflow-hidden bg-white text-black  ${
             isActive ? "flex animate-fadeInDown" : "hidden"
           }  `}>
           {commonLinks.map((link) => {
+            const isPage = isCurrentPage(pathname, link.url);
             return (
               <Link
                 key={link.title}
                 href={link.url}
-                className={`font-medium capitalize rounded-md link-smooth p-3 mb-2 hover:bg-secondary hover:text-white  `}>
+                className={`font-medium capitalize rounded-md link-smooth p-3 mb-2 hover:bg-secondary hover:text-white ${
+                  isPage ? "bg-secondary text-white" : ""
+                } `}>
                 {link.title}
               </Link>
             );

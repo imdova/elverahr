@@ -1,3 +1,5 @@
+"use client";
+import Link from "next/link";
 import React from "react";
 
 interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
@@ -5,7 +7,8 @@ interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   color?: "primary" | "secondary" | "danger" | "success";
   variant?: "contained" | "outlined" | "text";
   size?: "sm" | "md" | "lg";
-  icon?: React.ReactNode; // Icon prop added here
+  icon?: React.ReactNode;
+  href?: string; // Fixed typo
 }
 
 const Button: React.FC<ButtonProps> = ({
@@ -16,6 +19,7 @@ const Button: React.FC<ButtonProps> = ({
   size = "md",
   icon,
   className = "",
+  href = "",
   ...props
 }) => {
   const baseStyles =
@@ -31,8 +35,15 @@ const Button: React.FC<ButtonProps> = ({
   const outlinedClasses = {
     primary: "border border-blue-600 text-blue-600 hover:bg-blue-50",
     secondary: "border border-gray-600 text-gray-600 hover:bg-gray-50",
-    danger: "border border-primary text-primary hover:bg-red-50",
+    danger: "border border-red-600 text-red-600 hover:bg-red-50",
     success: "border border-green-600 text-green-600 hover:bg-green-50",
+  };
+
+  const textClasses = {
+    primary: "text-blue-600 hover:bg-blue-50",
+    secondary: "text-gray-600 hover:bg-gray-50",
+    danger: "text-red-600 hover:bg-red-50",
+    success: "text-green-600 hover:bg-green-50",
   };
 
   const sizeClasses = {
@@ -41,23 +52,31 @@ const Button: React.FC<ButtonProps> = ({
     lg: "px-5 py-3 text-lg",
   };
 
-  let finalClasses = baseStyles + " " + sizeClasses[size];
+  let finalClasses = `${baseStyles} ${sizeClasses[size]} ${className}`;
 
   if (variant === "contained") {
-    finalClasses += " " + colorClasses[color];
+    finalClasses += ` ${colorClasses[color]}`;
   } else if (variant === "outlined") {
-    finalClasses += " " + outlinedClasses[color] + " bg-transparent";
-  } else {
-    finalClasses += ` text-${color}-600 hover:bg-${color}-50`;
+    finalClasses += ` ${outlinedClasses[color]} bg-transparent`;
+  } else if (variant === "text") {
+    finalClasses += ` ${textClasses[color]}`;
+  }
+
+  if (loading) {
+    finalClasses += " opacity-50 cursor-not-allowed";
+  }
+
+  if (href) {
+    return (
+      <Link href={href} className={finalClasses}>
+        {loading ? "Loading..." : children}
+        {icon && <span className="ml-2">{icon}</span>}
+      </Link>
+    );
   }
 
   return (
-    <button
-      className={`${finalClasses} ${className} ${
-        loading ? "opacity-50 cursor-not-allowed" : ""
-      }`}
-      disabled={loading}
-      {...props}>
+    <button className={finalClasses} disabled={loading} {...props}>
       {loading ? "Loading..." : children}
       {icon && <span className="ml-2">{icon}</span>}
     </button>

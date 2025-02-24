@@ -3,10 +3,11 @@ import Logo from "@/assets/icons/logo";
 import { commonLinks } from "@/constants/header";
 import useScrollDetection from "@/hooks/useScrollDetection";
 import { BaseHeaderProps } from "@/types";
+import { isCurrentPage } from "@/util";
 import { Search } from "lucide-react";
 import Link from "next/link";
 import { useState } from "react";
-const TransparentHeader: React.FC<BaseHeaderProps> = () => {
+const TransparentHeader: React.FC<BaseHeaderProps> = ({ pathname }) => {
   const isScrolled = useScrollDetection();
   const [isActive, setIsActive] = useState(false);
 
@@ -25,12 +26,19 @@ const TransparentHeader: React.FC<BaseHeaderProps> = () => {
           </div>
           <div className="hidden text-main items-center space-x-4 lg:space-x-8  md:flex text-white ">
             {commonLinks.map((link) => {
+              const isPage = isCurrentPage(pathname, link.url);
               return (
                 <Link
                   key={link.title}
                   href={link.url}
                   className={`font-medium capitalize link-smooth border-b border-b-transparent pb-2   ${
-                    isScrolled ? "text-black hover:text-primary " : ""
+                    isScrolled
+                      ? isPage
+                        ? "text-primary"
+                        : "text-black hover:text-primary "
+                      : isPage
+                      ? "border-b-white"
+                      : ""
                   }  hover:border-b-white `}>
                   {link.title}
                 </Link>
@@ -77,14 +85,14 @@ const TransparentHeader: React.FC<BaseHeaderProps> = () => {
                   className={`h-[2px] w-full rounded-full ${
                     isScrolled ? "bg-black" : "bg-white"
                   } ${
-                    isActive ? "-rotate-45 -translate-y-[7px]" : ""
+                    isActive ? "-rotate-[40deg] -translate-y-[7px]" : ""
                   } `}></span>
               </div>
             </button>
           </div>
         </div>
         <div
-          className={`absolute top-full left-0  flex-col p-4 shadow-lg w-full overflow-hidden ${
+          className={`absolute top-full left-0 md:hidden flex-col p-4 shadow-lg w-full overflow-hidden ${
             isActive ? "flex animate-fadeInDown" : "hidden"
           }  ${
             isScrolled
@@ -92,11 +100,14 @@ const TransparentHeader: React.FC<BaseHeaderProps> = () => {
               : "text-white bg-white/20 backdrop-blur-lg"
           }`}>
           {commonLinks.map((link) => {
+            const isPage = isCurrentPage(pathname, link.url);
             return (
               <Link
                 key={link.title}
                 href={link.url}
                 className={`font-medium capitalize rounded-md link-smooth p-3 mb-2 ${
+                  isPage ? "bg-secondary text-white" : ""
+                } ${
                   isScrolled
                     ? "hover:bg-secondary hover:text-white"
                     : "hover:bg-secondary"

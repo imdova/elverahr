@@ -2,6 +2,7 @@ import Image from "next/image";
 import services_Img_1 from "@/assets/image/services-1.png";
 import ServiceCard from "@/components/ServiceCard";
 import { services } from "@/constants/services.data";
+import Link from "next/link";
 export default function AboutUsPage() {
   return (
     <>
@@ -25,9 +26,11 @@ export default function AboutUsPage() {
                 </span>
               </div>
               <ul className="flex gap-3">
-                <li className="text-xl lg:text-2xl font-semibold text-white">
+                <Link
+                  href={"/"}
+                  className="text-xl lg:text-2xl font-semibold text-white">
                   Home
-                </li>
+                </Link>
                 <li className="text-xl lg:text-2xl font-semibold text-white">
                   /
                 </li>
@@ -39,6 +42,7 @@ export default function AboutUsPage() {
           </div>
         </div>
       </section>
+      {/* Grid of services  */}
       <section className="py-16">
         <div className="container mx-auto px-6 lg:max-w-[1170px] h-full">
           <div className="w-full bg-[#eee] rounded-md p-6">
@@ -68,6 +72,7 @@ export default function AboutUsPage() {
                   title={service.title}
                   description={service.description}
                   icon={service.icon}
+                  id={service.id}
                 />
               ))}
             </div>

@@ -1,3 +1,5 @@
+import { ElementType } from "react";
+
 export interface BaseHeaderProps {
   pathname: string;
 }
@@ -24,3 +26,18 @@ export interface Client {
   testimonial: string;
   image: string;
 }
+
+export type ServiceType = {
+  id: string;
+  title: string;
+  details: string;
+  description: string;
+  icon: ElementType;
+  image: string;
+  offers: string[];
+  records: {
+    egypt: string;
+    saudi: string;
+  };
+  qustionContent: string[];
+};

@@ -9,7 +9,8 @@ export const routeConfigs: RouteConfig[] = [
   // default
   { pattern: "/", headerType: "transparent" },
   { pattern: "/about-us", headerType: "transparent" },
-  { pattern: "/services", headerType: "transparent" },
+  { pattern: "/contact-us", headerType: "transparent" },
+  { pattern: "/services/*", headerType: "transparent" },
   { pattern: "/*", headerType: "full" },
 ];
 

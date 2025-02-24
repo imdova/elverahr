@@ -21,7 +21,7 @@ export default function NotFoundPage() {
       </div>
 
       <div className="absolute bottom-4 text-sm text-secondary">
-        <p>© {new Date().getFullYear()} IMETS. All rights reserved.</p>
+        <p>© {new Date().getFullYear()} Elvera. All rights reserved.</p>
       </div>
     </div>
   );

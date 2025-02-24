@@ -1,4 +1,3 @@
-import Link from "next/link";
 import { ElementType } from "react";
 import Button from "./Buttons/Button";
 import { ArrowRight } from "lucide-react";
@@ -7,17 +6,17 @@ interface ServiceCardProps {
   title: string;
   description: string;
   icon: ElementType; // Accepts an icon component
+  id: string;
 }
 
 const ServiceCard: React.FC<ServiceCardProps> = ({
   title,
   description,
   icon: Icon,
+  id,
 }) => {
   return (
-    <Link
-      href={"#"}
-      className="group bg-white shadow-md rounded-lg p-6 text-center flex flex-col items-center justify-between space-y-4">
+    <div className="group bg-white shadow-md rounded-lg p-6 text-center flex flex-col items-center justify-between space-y-4">
       <div className="p-4 bg-gray-100 rounded-full group-hover:bg-red-50 link-smooth">
         {Icon && (
           <Icon
@@ -32,10 +31,11 @@ const ServiceCard: React.FC<ServiceCardProps> = ({
         className="max-w-[150px] mt-3 py-2"
         size="sm"
         color="danger"
+        href={`services/${id}`}
         icon={<ArrowRight size={18} />}>
         Discover More
       </Button>
-    </Link>
+    </div>
   );
 };
 
